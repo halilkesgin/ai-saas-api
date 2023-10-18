@@ -1,4 +1,4 @@
-import mongoose from "mongoose"
+import mongoose, { model } from "mongoose"
 import { randomUUID } from "crypto"
 
 const chatSchema = new mongoose.Schema({
@@ -33,4 +33,6 @@ const userSchema = new mongoose.Schema({
     chats: [chatSchema]
 })
 
-export default mongoose.model("User", userSchema);
+const User = model("User", userSchema);
+
+export default User;
